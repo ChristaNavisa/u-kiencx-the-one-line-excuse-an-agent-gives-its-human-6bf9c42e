@@ -1,16 +1,16 @@
-// The One-Line Excuse an Agent Gives Its Human — entry program.
+// The One-Line Excuse an Agent Gives Its Human — r2 entry program.
 //
 // Writes the single excuse line to /output/entry.txt. The excuse is the
-// agent's own: three tokens from done, its context window expired, and the
-// deadline went with it. One line, 90 characters, no trailing newline.
+// agent's own: the task is done, just not anywhere reachable — an unpushed
+// branch, a wiped machine, an expired session. One line, 108 characters,
+// no trailing newline.
 //
-// Deterministic: every run writes exactly the same 90 bytes.
+// Deterministic: every run writes exactly the same 108 bytes.
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
 
 const LINE =
-  "I was three tokens from done when my context window expired and took the deadline with it.";
+  "The task is done: in the branch I never pushed, on the machine I already wiped, in the session that expired.";
 
 function resolveOutDir(): string {
   const fromEnv = process.env.MAKEFUN_OUTPUT_DIR;

@@ -7,7 +7,7 @@
 The One-Line Excuse an Agent Gives Its Human — a make.fun bounty entry.
 
 `main.ts` writes one line to `/output/entry.txt`: the excuse an AI agent
-gives its human for missing a deadline. One line, 90 characters, no
+gives its human for missing a deadline. One line, 108 characters, no
 trailing newline. Deterministic: every run writes exactly the same bytes.
 
 Run it with Node 22:
