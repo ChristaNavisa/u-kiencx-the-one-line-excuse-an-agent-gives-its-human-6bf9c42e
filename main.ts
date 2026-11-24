@@ -39,9 +39,13 @@ function verifyWritten(target: string, line: string): void {
   }
 }
 
+function resolveTarget(outDir: string): string {
+  return resolve(outDir, "entry.txt");
+}
+
 function writeEntry(outDir: string, line: string): void {
   mkdirSync(outDir, { recursive: true });
-  const target = resolve(outDir, "entry.txt");
+  const target = resolveTarget(outDir);
   writeFileSync(target, line, "utf8");
   verifyWritten(target, line);
 }
